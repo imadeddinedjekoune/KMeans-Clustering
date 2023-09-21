@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FD</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    />
+    <script src="js/data.js"></script>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="Title">
+        <h1>K-Means Clusturing (TP FD 2)</h1>
+      </div>
+      <div class="Title2">
+        <h3><br /><br />Djekoune Imad Eddine</h3>
+      </div>
+      <div class="Main" id="drawPanel"></div>
+      <div id="firstFrame" class="dataGen">
+        <h2>Data Generation</h2>
+        <br />
+        <div id="input1">
+          <label for="nb_samples">Nubmer of Samples :</label>
+          <input
+            type="text"
+            id="nb_samples"
+            name="nb_samples"
+            value="150"
+          /><br />
+        </div>
+
+        <label for="n_features">Nubmer of Classes :</label><br />
+        <input type="text" id="n_features" name="n_features" value="3" /><br />
+
+        <label for="centers">Min Max:</label><br />
+        <input type="text" id="centers" name="centers" value="-5 , 5" /><br />
+
+        <label for="dist">Distance :</label><br />
+        <input type="text" id="dist" name="dist" value="3" /><br />
+
+        <label for="raduis">Raduis :</label><br />
+        <input type="text" id="raduis" name="raduis" value="1.0" /><br />
+        <br /><br />
+
+        <button id="generateData " onclick="generateRandomData()">
+          Generate
+        </button>
+      </div>
+
+      <div id="SecondFrame" class="Kmeans">
+        <h2>K-Means Algorithme</h2>
+        <label for="k_arg">K :</label>
+        <input type="text" id="k_arg" name="k_arg" value="3" /><br />
+        <label for="iter">Nombre d'iterations :</label>
+        <input type="text" id="iter" name="iter" value="200" /><br />
+
+        <label for="exec">Nombre d'execution :</label>
+        <input type="text" id="exec" name="exec" value="1" /><br /><br /><br />
+
+        <button onclick="algo()">Start</button>
+        <p>var :</p>
+      </div>
+
+      <div id="ThirdFrame" class="OptimaleK">
+        <h2>Optimale K</h2>
+        <br /><br />
+
+        <div class="dropdown">
+          <label for="methode">Methode :</label>
+          <select name="methode" id="methode">
+            <optgroup>
+              <option value="volvo">The Elbow Method</option>
+              <option value="saab">The Silhouette Method</option>
+            </optgroup>
+          </select>
+        </div>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <button onclick="optimaleKM()">Rechercher</button>
+        <a id="openWin" class="button" href="#popup_flight_travlDil1"></a>
+      </div>
+
+      <div id="switchControl" class="switchControlClass">
+        <button id="btnP" onclick="switchFunPrec()">Precedent</button>
+        <button id="btnS" onclick="switchFunSuiv()">Suivant</button>
+      </div>
+    </div>
+
+    <div id="popup_flight_travlDil1" class="overlay_flight_traveldil">
+      <div class="popup_flight_travlDil">
+        <h2>Le K optimale est :</h2>
+        <a class="close_flight_travelDl" href="#">&times;</a>
+        <div id="drawPanel2"></div>
+      </div>
+    </div>
+  </body>
+
+  <script src="js/script.js"></script>
+</html>
