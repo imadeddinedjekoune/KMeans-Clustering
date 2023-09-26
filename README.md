@@ -2,7 +2,11 @@
 The K-means Web App is a user-friendly tool that allows you to generate random data and apply the K-means clustering algorithm to it. Additionally, it provides two methods, the Elbow method and the Silhouette method, to help you determine the optimal value of K for your dataset.
 
 ## Demo : 
-visit the website : 
+visit the website : https://fancy-faloodeh-adfb7d.netlify.app/
+
+<p align="center">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/75379150/270539151-cf7e717f-4847-472e-9527-9301c34027f0.png" width="700"/>
+</p>
 
 ## Table of Contents
 
